@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/hero.png" alt="Sauce — distilled operator wisdom from the founders who actually built it" width="100%" />
+</p>
+
 # Sauce Skills
 
 Agent skill for finding **"the sauce"** — first-hand operator advice from founders, builders, and innovators — by mining transcripts of podcasts, interviews, and long-form talks. Pairs a curated registry of ~120 top startup/founder/VC/app/AI sources with a YouTube transcript sync tool and spawns a wide-context subagent to surface direct quotes (no RAG, no summarization).
