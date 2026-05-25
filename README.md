@@ -2,7 +2,7 @@
   <img src="assets/hero.png" alt="Sauce — distilled operator wisdom from the founders who actually built it" width="100%" />
 </p>
 
-# Sauce Skills
+# Sauce
 
 Agent skill for finding **"the sauce"** — first-hand operator advice from founders, builders, and innovators — by mining transcripts of podcasts, interviews, conference talks, and long-form interviews. Pairs a curated registry of ~180 top startup/founder/VC/app/AI/conference sources with a YouTube transcript sync tool and a self-evaluating research loop that keeps pulling until the answer is actually good.
 
