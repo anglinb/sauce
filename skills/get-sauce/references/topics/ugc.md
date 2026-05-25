@@ -27,6 +27,11 @@ UGC = paying or partnering with creators to make short-form video content (TikTo
 - **Primary:** `youtube.com/@gregisenberg`
 - **Why:** Ideation-grade. Less "here's a creator-pay structure that works" and more "here are 5 niche UGC patterns you haven't noticed yet." Pair with Superwall for theory-to-practice.
 
+### C.J. Weber — `youtube`
+- **Primary:** `youtube.com/@cjweber7`
+- **Why:** The *creator side* of the same coin. Most sources in this file are app founders paying creators; CJ is a 22-year-old TikTok Shop affiliate operator teaching what it looks like from the seat of the person making the videos — hook formulas, posting cadence, what platforms actually pay out, how to scale to $10K+/mo without an audience. Useful when the question is "how do the creators we hire actually think about this?" or for product ideas around the affiliate-creator economy. Mostly Shorts/short-form; transcripts are short and dense.
+- **Ingest:** `sync.py add cj-weber youtube.com/@cjweber7 …` — high volume of <60s videos, so expect lots of small transcripts.
+
 ## Adjacent / supporting sources
 
 - **TikTok Creative Center (`ads.tiktok.com/business/creativecenter`)** — official-but-actually-useful: top-performing ads by category. Not sauce, but a reference for what "good" looks like.

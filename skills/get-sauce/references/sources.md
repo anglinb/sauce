@@ -142,6 +142,7 @@ Noah Kagan | youtube.com/@noahkagan, x.com/noahkagan | youtube, AppSumo, indie, 
 Codie Sanchez | youtube.com/@codiesanchez, x.com/Codie_Sanchez | youtube, small-business, acquisition, boring-businesses, contrarian, Main-Street
 TK Kader | youtube.com/@TKKader | youtube, SaaS, GTM, B2B, founders
 Ali Abdaal | youtube.com/@aliabdaal, x.com/AliAbdaal | youtube, productivity, business, creators, YouTube-growth
+C.J. Weber | youtube.com/@cjweber7, webercj.com | youtube, TikTok-shop, affiliate, creator-economy, UGC, side-hustle, monetization, short-form
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Newsletters / Publications
