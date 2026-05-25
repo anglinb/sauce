@@ -1,6 +1,6 @@
 ---
 name: get-sauce
-description: Find "the sauce" on a question by mining transcripts of podcasts, interviews, blogs, talks, and conference recordings from founders and innovators who've actually done the thing. Use when the user asks "how do other founders do X", "what's the sauce on Y", "find me real-world advice on Z", "what have people said about...", or any time the goal is to surface first-hand operator knowledge (not generic web articles or LLM priors). Ships with a grepable registry of ~180 top startup/founder/VC/app/AI sources — podcasts (Acquired, MFM, Lenny's, 20VC, Founders, Superwall), blogs (Paul Graham, Sam Altman, Naval, patio11, Pieter Levels, Stratechery), newsletters (Stripe Press, First Round, Generalist, Not Boring), and conferences (Stripe Sessions, AI Engineer, OpenAI DevDay, Lenny Summit, SaaStr, QCon, Ray Summit, KubeCon, Figma Config, Money 20/20, and dozens more). Runs a full research loop — discover → ingest → wide-context subagent → critic-evaluates-the-answer → optional augment/redo loop with new sources — to avoid one-shot misses when the corpus is the wrong angle.
+description: Find "the sauce" on a question by mining transcripts of podcasts, interviews, blogs, talks, and conference recordings from founders, operators, and domain experts who've actually done the thing. Use when the user asks "how do other founders do X", "what's the sauce on Y", "find me real-world advice on Z", "what have people said about...", or any time the goal is to surface first-hand operator knowledge (not generic web articles or LLM priors). Includes a curated topics layer (apps, UGC, pixel-art, …) for fast domain entry plus a grepable master registry of ~180 sources — podcasts (Acquired, MFM, Lenny's, 20VC, Founders, Superwall), blogs (Paul Graham, Sam Altman, Naval, patio11, Pieter Levels, Stratechery), newsletters (Stripe Press, First Round, Generalist, Not Boring), and conferences (Stripe Sessions, AI Engineer, OpenAI DevDay, Lenny Summit, SaaStr, QCon, Ray Summit, KubeCon, Figma Config, Money 20/20, and dozens more). Supports both transcript ingestion (yt-dlp) and visual frame extraction (ffmpeg) for domains where the sauce is on screen, not in words. Runs a full research loop — discover → ingest → wide-context subagent → critic-evaluates-the-answer → optional augment/redo loop with new sources — to avoid one-shot misses when the corpus is the wrong angle.
 ---
 
 # Get Sauce
@@ -28,23 +28,33 @@ skills/get-sauce/
 ├── scripts/
 │   └── sync.py                       # YouTube transcript sync CLI
 ├── references/
-│   ├── sources.md                    # curated registry of ~120 top podcasts,
-│   │                                 # blogs, newsletters, channels, founders
-│   │                                 # — grepable by topic / medium / name
+│   ├── sources.md                    # master registry of ~180 podcasts, blogs,
+│   │                                 # newsletters, conferences — grepable by
+│   │                                 # topic / medium / name
+│   ├── topics/                       # curated per-domain starting points
+│   │   ├── README.md                 # how the topics layer works
+│   │   ├── apps.md                   # consumer mobile apps
+│   │   ├── ugc.md                    # user-generated content / short-form
+│   │   └── pixel-art.md              # pixel art technique & mastery
+│   ├── frame-extraction.md           # when you need a real image, not a transcript
+│   │                                 # (yt-dlp segment + ffmpeg frame grab)
 │   └── youtube-transcripts.md        # full sync.py / yt-dlp reference docs
-├── sources.json                      # tracked podcasts/channels registry
-│                                     # (auto-created on first `add`; gitignored)
+├── sources.json                      # tracked YouTube channels (auto-created;
+│                                     # gitignored)
 └── .gitignore
 ```
 
-Two registries to keep straight:
+Three layers — keep them straight:
 
-- **`references/sources.md`** — the **discovery** layer. A flat, grepable list of the
-  best content in the world about startups, apps, VC, indie, AI, business. Use this to
-  figure out *which* source to mine for any given question.
-- **`sources.json`** — the **ingestion** layer. Tracks which YouTube playlists/channels
-  have been downloaded locally via `sync.py`. Subset of `sources.md` — only YouTube
-  things that we've decided to keep on disk for cheap re-reading.
+- **`references/topics/<domain>.md`** — the **curated discovery** layer. Hand-picked,
+  opinionated starting points for known domains (apps, UGC, pixel art, …). **Check
+  here FIRST** when the question maps cleanly to a domain. Includes sources outside
+  the master registry (e.g. pixel artists who aren't in the founder-content frame).
+- **`references/sources.md`** — the **grepable discovery** layer. Flat, ~180 entries,
+  comprehensive. Fall back to this when no topic file fits.
+- **`sources.json`** — the **ingestion bookkeeping** layer. Tracks which YouTube
+  playlists/channels have been downloaded locally via `sync.py`. Subset of `sources.md`
+  — only YouTube things we've decided to keep on disk for cheap re-reading.
 
 `scripts/sync.py` wraps `yt-dlp` to download English subtitles for any new videos in a playlist/channel/video URL, strips timestamps and HTML tags, collapses rolling-caption duplicates, and writes clean paragraph-wrapped `.txt` files. Idempotent and safe to re-run — each run only pulls episodes not already in the local archive. See `references/youtube-transcripts.md` for the complete CLI reference, implementation notes, and auto-polling setup options.
 
@@ -68,9 +78,35 @@ If `sources.json` is empty when you start, you can rehydrate the registry by run
 
 Restate the user's question in one sentence and confirm it. Sauce-finding is expensive (downloading + reading transcripts), so make sure you're hunting for the right thing.
 
-### Step 2 — Discover candidate sources from the registry
+### Step 2 — Discover candidate sources
 
-Before asking the user anything, **grep `references/sources.md`** to find which podcasts / blogs / channels / founders are likely to have sauce on the question. This is the "look around the room" step — you should never default to your own memory of who said what when there's a curated registry sitting right there.
+You have two discovery layers. **Always check topics first.**
+
+#### Step 2a — Is there a topic file?
+
+List existing topics:
+
+```bash
+ls skills/get-sauce/references/topics/
+```
+
+Topics are curated, opinionated starting-point lists for known domains. They're 5–10× higher-signal than grep because someone (you or a prior agent) already did the curation work for that domain. If the user's question maps cleanly to one, **open that file and use its picks**:
+
+```bash
+# User asked about pixel art technique
+cat skills/get-sauce/references/topics/pixel-art.md
+
+# User asked about UGC for apps
+cat skills/get-sauce/references/topics/ugc.md
+```
+
+Topic files also include **domain-specific guidance** (where the sauce actually lives, what to skip, ingestion notes) that grep can't surface. Read them in full when relevant — they're short.
+
+If your question fits but only partially, you can still use the topic file as the *primary* candidates and grep the master registry for an augment pass (see Step 9, AUGMENT verdict).
+
+#### Step 2b — Fall back to grepping the master registry
+
+If no topic file fits, grep `references/sources.md`:
 
 ```bash
 # Grep by topic — start with 2-3 keywords from the question
@@ -83,6 +119,7 @@ grep -i "naval\|paul graham\|altman" skills/get-sauce/references/sources.md
 grep -i "| podcast"    skills/get-sauce/references/sources.md
 grep -i "| blog"       skills/get-sauce/references/sources.md
 grep -i "| youtube"    skills/get-sauce/references/sources.md
+grep -i "| conference" skills/get-sauce/references/sources.md
 grep -i "| newsletter" skills/get-sauce/references/sources.md
 ```
 
@@ -90,9 +127,13 @@ grep -i "| newsletter" skills/get-sauce/references/sources.md
 
     Name | url1, url2, x.com/handle | tag1, tag2, tag3, ...
 
-The **first tag is the medium** (`podcast`, `blog`, `newsletter`, `youtube`, `book-publisher`, `vc-publication`, `x-account`, `community`, `publication`); the rest are topic tags.
+The **first tag is the medium** (`podcast`, `blog`, `newsletter`, `youtube`, `conference`, `book-publisher`, `vc-publication`, `x-account`, `community`, `publication`); the rest are topic tags.
 
-**If grep returns nothing or feels too narrow, read the whole file.** It's small (~120 entries) — `cat skills/get-sauce/references/sources.md` and skim it. The tags are imperfect; some sources cover broader ground than their tags suggest. Don't fall back on your own knowledge before reading the registry end-to-end.
+**If grep returns nothing or feels too narrow, read the whole file.** It's ~180 entries — `cat skills/get-sauce/references/sources.md` and skim it. The tags are imperfect; some sources cover broader ground than their tags suggest. Don't fall back on your own knowledge before reading the registry end-to-end.
+
+#### When neither layer fits
+
+If the question is truly novel (a domain we haven't curated AND grep finds nothing useful), tell the user honestly and ask them to nominate a starting source. After the hunt, **create a new topic file** for it (see "How to contribute" below).
 
 ### Step 3 — Ask the user to confirm the source(s)
 
@@ -124,6 +165,7 @@ Allow multi-select if more than one source makes sense. If the user names someon
 |---|---|
 | `podcast` (with YouTube link) | `sync.py` — most podcasts publish full episodes on YouTube with auto-captions |
 | `youtube` | `sync.py` |
+| `conference` | `sync.py` against the conference's YouTube channel/playlist (second URL in the registry line). Conferences usually drop a year's talks in batches; great signal-per-MB. |
 | `blog` | `WebFetch` each post. Find the archive/index page first, then fetch posts individually. For multi-page archives, consider grepping the registry for an alt URL (e.g. RSS). |
 | `newsletter` | `WebFetch` the public archive (Substack, Beehiiv, etc. all expose one). Paywalled ones (`The Information`, `Stratechery`) require the user's cookies — skip or note the limitation. |
 | `book-publisher` (e.g. Stripe Press) | `WebFetch` book summaries/excerpts. Full books are out of scope. |
@@ -132,6 +174,12 @@ Allow multi-select if more than one source makes sense. If the user names someon
 | `x-account` | Best-effort only. Public X profiles have heavy rate-limiting and most threads are short. Note as a limitation; don't rely on X as a primary source. |
 
 Multi-medium sources (e.g. Acquired = podcast + YouTube; Stratechery = blog + newsletter) — pick the medium that's cheapest to ingest in full. YouTube transcripts are nearly always the path of least resistance when available.
+
+#### When transcripts aren't enough — frame extraction
+
+For some domains (pixel art, design tutorials, UI walkthroughs, code-on-screen demos) the actual sauce is *visual* — the transcript says "and now I add the second shade" while the meaning is what's on screen. In those cases, sync the transcript AS WELL but also use the frame-extraction workflow: download the video (or just a 5-second segment) with `yt-dlp`, then pull a single frame at the exact timestamp with `ffmpeg`. Full guide: [`references/frame-extraction.md`](references/frame-extraction.md).
+
+Default to frame extraction whenever the topic file (Step 2a) tells you the sauce is visual — `topics/pixel-art.md` flags this explicitly.
 
 ### Step 5 — Check what's already downloaded (YouTube path)
 
@@ -439,5 +487,7 @@ Open the PR anyway with a note in the description like _"unsure if `crypto-tradi
 
 ## Further reading
 
-- `references/sources.md` — curated registry of ~120 top startup/founder/VC/app/AI sources. Grep by topic or read end-to-end. **Always check this before falling back on LLM priors about who said what.**
+- `references/topics/` — **curated per-domain starting points** (apps, UGC, pixel-art, …). Check here first when the question maps to a known domain. See `topics/README.md` for the conventions and how to add a new topic.
+- `references/sources.md` — master grepable registry of ~180 top startup/founder/VC/app/AI/conference sources. Grep by topic or read end-to-end. **Always check this before falling back on LLM priors about who said what.**
+- `references/frame-extraction.md` — when the sauce is visual (pixel art, UI demos, design tutorials), use `yt-dlp` to download a segment and `ffmpeg` to pull a single frame as a PNG. Avoids the "useless transcript over essential visuals" failure mode.
 - `references/youtube-transcripts.md` — full `sync.py` CLI reference, output layout, troubleshooting, cron/launchd/`schedule` setup, and implementation notes for hacking on the script.
