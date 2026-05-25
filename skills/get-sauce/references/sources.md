@@ -48,6 +48,7 @@ user — the tags are imperfect and some sources cover more ground than their ta
 # ──────────────────────────────────────────────────────────────────────────────
 Acquired | acquired.fm, youtube.com/@AcquiredFM, x.com/AcquiredFM | podcast, youtube, tech-history, deep-dives, M&A, strategy, big-tech, founders
 My First Million | mfmpod.com, youtube.com/@MyFirstMillionPod, x.com/MFMPod | podcast, youtube, business-ideas, indie, AI, consumer, side-hustle, Shaan-Puri, Sam-Parr
+Napkin Math | napkinmath.fm, youtube.com/@NapkinMathFM | podcast, youtube, startups, founders, SaaS, AI, bootstrapping, business-ideas, Sabba-Keynejad, Charlie-Ward, VEED, Ramen-Club
 Lenny's Podcast | lennyspodcast.com, lennysnewsletter.com/podcast | podcast, youtube, PM, product, growth, careers, founders, interviews
 Indie Hackers Podcast | indiehackers.com/podcast, x.com/IndieHackers | podcast, bootstrapping, indie, MRR, side-projects, solo, SaaS, founders
 This Week in Startups | thisweekinstartups.com, youtube.com/@ThisWeekIn, x.com/Jason | podcast, youtube, VC, news, fundraising, Calacanis, interviews
