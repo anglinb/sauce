@@ -1,6 +1,6 @@
 ---
 name: get-sauce
-description: Find "the sauce" on a question by mining transcripts of podcasts, interviews, blogs, and talks from founders and innovators who've actually done the thing. Use when the user asks "how do other founders do X", "what's the sauce on Y", "find me real-world advice on Z", "what have people said about...", or any time the goal is to surface first-hand operator knowledge (not generic web articles or LLM priors). Ships with a grepable registry of ~120 top startup/founder/VC/app/AI sources (Paul Graham, Sam Altman, Naval, Acquired, My First Million, Lenny's, Stripe Press, Y Combinator, a16z, Stratechery, Superwall Podcast, Starter Story, and many more). Defaults: Superwall Podcast for app/paywall/monetization questions, Starter Story for general business/bootstrapping. Bundles its own YouTube transcript sync tool and spawns a wide-context subagent to actually answer the question.
+description: Find "the sauce" on a question by mining transcripts of podcasts, interviews, blogs, talks, and conference recordings from founders and innovators who've actually done the thing. Use when the user asks "how do other founders do X", "what's the sauce on Y", "find me real-world advice on Z", "what have people said about...", or any time the goal is to surface first-hand operator knowledge (not generic web articles or LLM priors). Ships with a grepable registry of ~180 top startup/founder/VC/app/AI sources — podcasts (Acquired, MFM, Lenny's, 20VC, Founders, Superwall), blogs (Paul Graham, Sam Altman, Naval, patio11, Pieter Levels, Stratechery), newsletters (Stripe Press, First Round, Generalist, Not Boring), and conferences (Stripe Sessions, AI Engineer, OpenAI DevDay, Lenny Summit, SaaStr, QCon, Ray Summit, KubeCon, Figma Config, Money 20/20, and dozens more). Runs a full research loop — discover → ingest → wide-context subagent → critic-evaluates-the-answer → optional augment/redo loop with new sources — to avoid one-shot misses when the corpus is the wrong angle.
 ---
 
 # Get Sauce
@@ -226,13 +226,97 @@ Length: as long as it needs to be. Quote density > brevity.
 
 Run it in the foreground — you need the result to relay it back to the user.
 
-### Step 9 — Relay the result
+### Step 9 — Evaluate the answer against the original question
 
-Pass the subagent's findings through to the user with a short framing intro (which sources, how many episodes, what question was asked). Don't re-summarize — the whole point is to surface the operators' own words.
+**This is the most-skipped step and the most important.** Before relaying to the user, spawn a **second subagent (the "critic")** whose only job is to score the sauce-hunter's answer against the original question. The registry has ~180 entries and the labeling is imperfect — even when grep finds a plausible source, the corpus might be the wrong angle on the question. The critic catches that.
+
+Spawn the critic with `subagent_type: "general-purpose"` and this prompt template:
+
+```
+You are a critic. You're going to score a "sauce" answer against the user's
+original question, and decide whether another retrieval pass is warranted.
+
+ORIGINAL QUESTION:
+  <USER'S EXACT QUESTION>
+
+SOURCES MINED (with brief description of each):
+  - <source-1>: <one-line description of what this corpus contains>
+  - <source-2>: ...
+
+THE SAUCE-HUNTER'S ANSWER:
+  <PASTE THE ENTIRE PRIOR SUBAGENT RESPONSE HERE>
+
+Evaluate on the following axes — for each, score 1-10 with a one-sentence
+justification, then end with an overall verdict and recommendation.
+
+1. **Direct-answer coverage** — Did the answer directly address what the user
+   asked, or did it drift to adjacent topics?
+2. **Quote density** — Are claims backed by verbatim quotes from operators,
+   or did the prior agent slip into paraphrasing-as-fact?
+3. **Perspective diversity** — Do the quoted operators represent multiple
+   stances (different stages, business models, ideologies), or is the
+   answer homogeneous (e.g. all consumer-app founders, no enterprise B2B)?
+4. **Tactical specificity** — Are there real numbers, dollar figures,
+   percentages, specific tactics with steps — or is it abstract advice?
+5. **Unresolved gaps** — List 2–4 sub-questions the user almost certainly
+   has that the corpus did NOT answer. Be specific.
+
+Then output one of three verdicts:
+
+  SHIP    — Average score ≥ 8. Ship the answer to the user as-is.
+  AUGMENT — Average score 5–7. The answer is useful but incomplete. Recommend
+            1–3 *additional* sources from a list provided to you, with a
+            one-line rationale for each. (The orchestrator will decide
+            whether to ingest them and re-run the sauce-hunter.)
+  REDO    — Average score < 5 OR the corpus is fundamentally the wrong fit
+            for the question (e.g. user asked about enterprise B2B and we
+            mined a consumer-mobile podcast). Recommend a complete pivot
+            to different sources.
+
+When recommending sources, you may either:
+  - Recommend specific candidates from this registry: <PASTE relevant grep
+    results from references/sources.md here — e.g. the next 5–10 candidates
+    you grep'd for the topic but didn't end up mining>
+  - Or describe the type of source needed (e.g. "an enterprise-SaaS-focused
+    podcast" or "a fintech-payments conference") and let the orchestrator grep.
+
+Output format:
+  - Scores (1-10 each, with one-sentence justifications)
+  - Unresolved gaps list (2-4 items)
+  - Verdict (SHIP | AUGMENT | REDO)
+  - Recommended next sources (only if AUGMENT or REDO)
+  - One paragraph of what specifically to ask the next sauce-hunter
+    differently — the prompt for the loop.
+```
+
+Run the critic in the foreground; you need its output.
+
+### Step 10 — Decide whether to loop
+
+Based on the critic's verdict:
+
+- **SHIP** → proceed to Step 11. Relay the answer to the user.
+- **AUGMENT** → before relaying, ingest 1–2 of the recommended sources and re-run the sauce-hunter (Steps 4–8) against the *combined* corpus, with a modified prompt that includes the unresolved gaps. Then re-run the critic (Step 9). Cap at 2 augment loops to avoid runaway costs — if a third pass would be needed, ship what you have and tell the user what's still missing.
+- **REDO** → throw out the current corpus (don't delete files — just don't feed them to the next pass). Re-do Steps 2–8 with the critic's recommended sources. Cap at 1 redo.
+
+When you loop, **tell the user concisely** before doing so:
+
+> _"The first pass found ~70% of what you asked, but it was mostly consumer-app voices and you implied you care about enterprise. Pulling in [Source X] and re-running — give me ~2 min."_
+
+This is the difference between a one-shot answer and an actual research loop.
+
+### Step 11 — Relay the result
+
+Pass the (post-loop) findings through to the user with a short framing intro:
+- Which sources, how many episodes/posts, what question was asked
+- If you looped: which sources you added in the augment pass and why
+- The critic's final score in one line ("Critic rated this 8.4/10 for coverage; the main remaining gap is X — want me to dig into that next?")
+
+Don't re-summarize the operators' words — that's the whole point. The framing is a wrapper around their actual quotes.
 
 ## Re-using the skill on follow-ups
 
-If the user asks a follow-up against the **same corpus**, skip Steps 2–6 and just spawn a fresh subagent with the new question (Step 8). The corpus is already current as of the most recent sync.
+If the user asks a follow-up against the **same corpus**, skip Steps 2–6 and just spawn a fresh sauce-hunter with the new question (Step 8). The corpus is already current as of the most recent sync. Still run the critic in Step 9 — the labeling problem applies even to follow-ups.
 
 If they ask against a **different domain**, start over from Step 2 but check existing sources first — they may have already been tracked for a previous sauce hunt.
 

@@ -179,3 +179,78 @@ Trung Phan | trungphan.substack.com, x.com/TrungTPhan | newsletter, x-account, t
 Polina Marinova Pompliano | thepost.substack.com, x.com/polina_marinova | newsletter, founders, profiles, profiles-in-history
 Khe Hy | radreads.co, x.com/khemaridh | newsletter, knowledge-work, productivity, leaving-bigco, finance
 Visualize Value | visualizevalue.com, x.com/visualizevalue | x-account, design, mental-models, branding, Jack-Butcher
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Conferences (operator-grade talks, mostly published on YouTube)
+# ──────────────────────────────────────────────────────────────────────────────
+# Conferences are an underrated sauce source — talks are usually 20–45 min of
+# tactical, in-the-trenches content from founders and engineers. Most of the
+# entries below publish their talks to YouTube and can be ingested by sync.py.
+# The second URL is the YouTube channel/playlist you'd point sync.py at.
+
+# --- AI / ML / agents / LLM ---
+AI Engineer (Summit / World's Fair / Code Summit) | ai.engineer, youtube.com/@aiDotEngineer | conference, youtube, AI, agents, LLM, dev-tools, evals, RAG, MCP, Latent-Space, Swyx
+OpenAI DevDay | openai.com/devday, youtube.com/@OpenAI, youtube.com/playlist?list=PLOXw6I10VTv_o0ZLpFu2IQyQOho1l-v7y | conference, youtube, AI, OpenAI, API, agents, multimodal, dev-tools, keynote
+Ray Summit (Anyscale) | anyscale.com/ray-summit, youtube.com/playlist?list=PLzTswPQNepXm3Q-PpP619ThIW5EX6Cah8 | conference, youtube, AI, MLOps, distributed-systems, inference, vLLM, fine-tuning, Anyscale
+LangChain Interrupt | interrupt.langchain.com, youtube.com/@LangChain | conference, youtube, AI, agents, LangChain, LangGraph, production-LLM, evals, deployment
+Anthropic / Claude Engineer events | anthropic.com/events, youtube.com/@anthropic-ai | conference, youtube, AI, Claude, agents, prompt-engineering, MCP, safety
+NVIDIA GTC | nvidia.com/gtc, youtube.com/@NVIDIA | conference, youtube, AI, GPU, infrastructure, CUDA, robotics, computer-vision, Jensen-Huang
+Google I/O | io.google, youtube.com/@GoogleDevelopers | conference, youtube, AI, Gemini, Android, web, cloud, Google
+Microsoft Build | build.microsoft.com, youtube.com/@MicrosoftDeveloper | conference, youtube, AI, Copilot, Azure, .NET, dev-tools, enterprise
+AWS re:Invent | reinvent.awsevents.com, youtube.com/@AWSEventsChannel | conference, youtube, AI, cloud, infrastructure, AWS, Bedrock, agents, databases
+Snowflake Summit | snowflake.com/summit, youtube.com/@SnowflakeInc | conference, youtube, AI, data, warehouse, analytics, MLOps
+Databricks Data + AI Summit | databricks.com/dataaisummit, youtube.com/@Databricks | conference, youtube, AI, data, MLOps, Spark, lakehouse, enterprise
+MLOps World | mlopsworld.com, youtube.com/@MLOpsWorld | conference, youtube, AI, MLOps, production-ML, deployment, monitoring
+The AI Conference (Ben Lorica) | aiconference.com, youtube.com/@TheAIConference | conference, youtube, AI, LLM, agents, applied-ML, Gradient-Flow
+
+# --- Developer / engineering ---
+QCon / InfoQ Dev Summit | infoq.com/qcon, youtube.com/@InfoQ | conference, youtube, dev, eng, architecture, distributed-systems, SRE, eng-leadership, platform
+GOTO Conferences | gotopia.tech, youtube.com/@GOTO- | conference, youtube, dev, eng, architecture, dev-tools, programming-languages, classics
+LeadDev | leaddev.com, youtube.com/@LeadDev | conference, youtube, dev, eng, eng-leadership, eng-management, careers, org-design
+React Conf | conf.react.dev, youtube.com/@ReactConfOfficial | conference, youtube, dev, react, frontend, JavaScript, Meta
+React Conferences (GitNation) | gitnation.org, youtube.com/@ReactConferences | conference, youtube, dev, react, frontend, JavaScript, TypeScript, Node
+Next.js Conf / Vercel Ship | nextjs.org/conf, youtube.com/@VercelHQ | conference, youtube, dev, react, Next.js, web-platform, edge, AI-SDK
+ViteConf | viteconf.org, youtube.com/@vitejs | conference, youtube, dev, JavaScript, tooling, frontend, Vite, build-tools
+JSConf | jsconf.com, youtube.com/@jsconf | conference, youtube, dev, JavaScript, frontend, Node
+PyCon US | pycon.org, youtube.com/@PyConUS | conference, youtube, dev, python, data, web
+GopherCon | gophercon.com, youtube.com/@GopherAcademy | conference, youtube, dev, Go, golang, infrastructure
+RustConf | rustconf.com, youtube.com/@RustVideos | conference, youtube, dev, rust, systems-programming, performance
+KubeCon + CloudNativeCon (CNCF) | events.linuxfoundation.org/kubecon-cloudnativecon-north-america, youtube.com/@cncf | conference, youtube, dev, eng, kubernetes, cloud-native, devops, SRE, observability
+DockerCon | docker.com/dockercon, youtube.com/@DockerInc | conference, youtube, dev, containers, devops, microservices
+HashiConf | hashicorp.com/conferences/hashiconf, youtube.com/@HashiCorp | conference, youtube, dev, infrastructure, Terraform, Vault, devops
+GitHub Universe | githubuniverse.com, youtube.com/@GitHub, youtube.com/playlist?list=PL0lo9MOBetEF_de7yKAWpnMkTsKH6aJ4P | conference, youtube, dev, eng, AI, Copilot, devops, security, OSS
+Strange Loop (archived) | thestrangeloop.com, youtube.com/@strangeloopconf | conference, youtube, dev, eng, programming-languages, distributed-systems, classics, FP
+SREcon (USENIX) | usenix.org/srecon, youtube.com/@usenix | conference, youtube, dev, SRE, eng, reliability, observability, postmortems
+
+# --- Startup / founder / VC ---
+SaaStr Annual | saastr.com/saastr-annual, youtube.com/@saastr | conference, youtube, founders, startup, SaaS, B2B, sales, GTM, Jason-Lemkin
+MicroConf | microconf.com, youtube.com/@MicroConf | conference, youtube, founders, startup, SaaS, bootstrapping, indie, Rob-Walling
+Lenny & Friends Summit | lennyssummit.com, youtube.com/playlist?list=PL2fLjt2dG0N4z9w9pkeMgdPq2xcpME_N2 | conference, youtube, founders, startup, PM, product, growth, careers, Lenny-Rachitsky
+Y Combinator Startup School | startupschool.org, youtube.com/@ycombinator | conference, youtube, founders, startup, YC, advice, fundraising, hiring, Garry-Tan
+TechCrunch Disrupt | techcrunch.com/events/tc-disrupt, youtube.com/@techcrunch | conference, youtube, founders, startup, VC, fundraising, news, pitch-competitions
+Web Summit | websummit.com, youtube.com/channel/UCJtkHqH4Qof97TSx7BzE5IQ | conference, youtube, founders, startup, VC, Lisbon, global, tech-news
+Slush | slush.org, youtube.com/channel/UCv2JYTjV80AuHODJO0R6EnQ | conference, youtube, founders, startup, VC, Helsinki, Europe, deep-tech
+Collision | collisionconf.com, youtube.com/@CollisionConf | conference, youtube, founders, startup, VC, tech-news, Toronto, sister-of-Web-Summit
+All-In Summit | allinsummit.com, youtube.com/@allin | conference, youtube, founders, VC, macro, debate, Chamath, Sacks, Friedberg, Calacanis
+Acquired Conference (Acquired Live) | acquired.fm, youtube.com/@AcquiredFM | conference, youtube, founders, deep-dives, history, business-strategy, Ben-Gilbert, David-Rosenthal
+First Round CEO Summit (recorded talks) | review.firstround.com, youtube.com/@FirstRoundCapital | conference, youtube, founders, leadership, scaling, CEO, B2B
+South Park Commons events | southparkcommons.com, youtube.com/@SouthParkCommons | conference, youtube, founders, founder-in-residence, deep-tech, AI, technical
+LAUNCH Festival | launchfestival.com, youtube.com/@thisweekin | conference, youtube, founders, startup, VC, Calacanis, pitch
+Acquired Conferences (Hometown / Annual Live) | acquired.fm, youtube.com/@AcquiredFM | conference, youtube, founders, deep-dives, business-history
+
+# --- Product / design / vertical tech ---
+Stripe Sessions | stripe.com/sessions, youtube.com/playlist?list=PLcoWp8pBTM3CYTQho8i-a_lzx4cq7-ePh | conference, youtube, fintech, payments, AI, agents, MCP, dev-tools, Stripe, internet-economy
+Twilio SIGNAL | signal.twilio.com, youtube.com/@twilio | conference, youtube, dev, communications, AI, customer-engagement, voice, messaging
+Cloudflare Connect | cloudflare.com/connect, youtube.com/@Cloudflare | conference, youtube, dev, infrastructure, edge, security, AI, workers
+Figma Config | config.figma.com, youtube.com/channel/UCQsVmhSa4X-G3lHlUtejzLA | conference, youtube, design, product, PM, UX, Dylan-Field, Figma
+Adobe MAX | max.adobe.com, youtube.com/@AdobeCreativeCloud | conference, youtube, design, creative, AI, video, Adobe, Photoshop
+Mind the Product (#mtpcon) | mindtheproduct.com, youtube.com/c/MindtheProductTV | conference, youtube, product, PM, ProductTank, careers, leadership
+INBOUND (HubSpot) | inbound.com, youtube.com/@hubspot | conference, youtube, marketing, growth, sales, content, HubSpot, B2B
+Dreamforce (Salesforce) | salesforce.com/dreamforce, youtube.com/@salesforce | conference, youtube, enterprise, SaaS, CRM, sales, Salesforce, AI
+Money 20/20 | money2020.com, youtube.com/channel/UCip4CIpmM13NOAH-j9GiAzg | conference, youtube, fintech, payments, banking, stablecoins, open-finance
+Shoptalk | shoptalk.com, youtube.com/@Shoptalk | conference, youtube, ecommerce, DTC, retail, brands, Shopify
+MozCon | moz.com/mozcon, youtube.com/@MozHQ | conference, youtube, marketing, SEO, content, growth
+Business of Apps Summit (App Promotion Summit) | apppromotionsummit.com, youtube.com/channel/UCg2NMpWp3jI3zYg_R4NZIaQ | conference, youtube, apps, mobile, ASO, UA, paywall, monetization, growth
+VidCon | vidcon.com, youtube.com/@vidcon | conference, youtube, creator-economy, YouTube, TikTok, creators, brand-deals
+Podcast Movement | podcastmovement.com, youtube.com/@PodcastMovement | conference, youtube, creator-economy, podcasting, audio, monetization
+SXSW (interactive) | sxsw.com, youtube.com/@sxsw | conference, youtube, founders, creator-economy, culture, tech-meets-culture, Austin
