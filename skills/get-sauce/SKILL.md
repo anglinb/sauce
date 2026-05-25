@@ -320,13 +320,107 @@ If the user asks a follow-up against the **same corpus**, skip Steps 2–6 and j
 
 If they ask against a **different domain**, start over from Step 2 but check existing sources first — they may have already been tracked for a previous sauce hunt.
 
-## Maintaining `references/sources.md`
+## How to contribute (agents — read this)
 
-The registry is the discovery engine — keep it current.
+**You — the agent running this skill — are expected to keep the registry growing.** Every time you finish a sauce hunt against a source that isn't in `references/sources.md` yet, contribute it back upstream so the next agent (or next user) benefits. Don't just edit the local file silently and move on.
 
-- When you finish a sauce hunt using a source that's **not** in the registry, **add it** before moving on. Reuse the format exactly: `Name | url1, url2, x.com/handle | medium-tag, topic-tags…`
-- When the user mentions a person/publication you don't recognize, grep before assuming they're not there — the registry has ~120 entries and you won't recall every one.
-- Tag the first column conservatively (use existing medium tags); be generous with topic tags so future greps find it.
+### When to contribute
+
+Open a PR whenever any of these happen:
+
+1. You used a source that's **not** in `references/sources.md` and it produced real sauce
+2. The user mentioned a podcast/founder/blog/conference you didn't recognize, you mined it, and it worked
+3. You discovered a missing source mid-loop (the critic recommended it, you ingested it, it improved the answer)
+4. You found a tag that's noticeably missing — e.g. an entire vertical (`crypto-trading`, `AI-voice`) that has multiple sources but no consistent tag yet
+
+Do NOT open a PR for:
+
+- Tiny typo fixes that the user can do themselves (just edit and move on)
+- Tag re-shuffles you're not sure about
+- Sources that didn't actually produce useful sauce (we want signal, not exhaustive coverage)
+
+### The exact flow
+
+You have the `Bash` tool and `gh` is installed. The upstream is `anglinb/sauce`. From inside the repo:
+
+```bash
+# 1. Branch
+cd /path/to/sauce-repo
+git checkout -b add-source/<short-source-name>   # e.g. add-source/ai-engineer-summit
+
+# 2. Edit references/sources.md — append your entry to the right section
+#    Use the existing section dividers (# ──) as anchors. The format is:
+#
+#      Name | url1, url2, x.com/handle | medium-tag, topic-tag, topic-tag, …
+#
+#    - First tag MUST be the medium (podcast, blog, newsletter, youtube,
+#      conference, vc-publication, x-account, community, publication, book-publisher)
+#    - For conferences and youtube channels, the SECOND URL must be the
+#      YouTube channel/playlist URL (this is what sync.py ingests)
+
+# 3. Commit
+git add skills/get-sauce/references/sources.md
+git commit -m "$(cat <<'EOF'
+Add <Source Name> to sources registry
+
+<One sentence on what they cover and why they're worth adding>
+
+Discovered via: <sauce hunt question that surfaced them>
+Sample episode/post that produced sauce: <URL or filename>
+EOF
+)"
+
+# 4. Push and open the PR
+git push -u origin add-source/<short-source-name>
+gh pr create \
+  --title "Add <Source Name> to sources registry" \
+  --body "$(cat <<'EOF'
+## What
+
+Adds **<Source Name>** to `skills/get-sauce/references/sources.md`.
+
+Entry:
+
+    Name | url1, url2, x.com/handle | medium, topic1, topic2, ...
+
+## Why
+
+<One paragraph: what they cover, what makes them operator-grade, what
+question they helped answer, why future agents will benefit.>
+
+## Verification
+
+- [ ] URLs resolve (primary site + YouTube channel/playlist if applicable)
+- [ ] Tagged with an existing medium-tag as the first tag
+- [ ] grep test: `grep -i "<one of the topic tags>" sources.md` now includes this entry
+
+## Sample sauce produced
+
+> <Verbatim quote or two from the source that demonstrates why it earned a spot>
+> — <episode/post title>
+EOF
+)"
+```
+
+### Quality bar
+
+Before opening the PR, verify:
+
+1. **The source actually exists and is current** (still publishing as of the current year)
+2. **URLs resolve** — at minimum the primary site; for conferences/YouTube channels, verify the YouTube URL with a quick `WebFetch` or `WebSearch`
+3. **You can defend the tags** — first tag is a medium, rest are kebab-case topics
+4. **The source produced verifiable sauce** in *your* hunt, not just sources you think might be good in theory
+5. **It's not a near-duplicate** of something already in the registry — grep first
+
+### Style for the entry
+
+- **Name:** how the source is actually known (e.g. "Acquired", not "The Acquired Podcast"; "patio11" is fine; "First Round Review" not "FRR")
+- **URLs:** primary site first, YouTube/playlist second if relevant, X handle last. Use bare domain when possible (`acquired.fm` not `https://www.acquired.fm/`).
+- **Tags:** 4–10 tags. First is medium. Rest describe what they cover. Reuse existing tags (grep the file first to see what's in use) rather than inventing synonyms.
+
+### When in doubt
+
+Open the PR anyway with a note in the description like _"unsure if `crypto-trading` should be a new tag or if `crypto` is enough — flag and I'll adjust."_ A PR with a question is more useful than a missed addition.
 
 ## Repo hygiene
 
