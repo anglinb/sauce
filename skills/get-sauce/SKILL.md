@@ -35,7 +35,9 @@ skills/get-sauce/
 │   │   ├── README.md                 # how the topics layer works
 │   │   ├── apps.md                   # consumer mobile apps
 │   │   ├── ugc.md                    # user-generated content / short-form
-│   │   └── pixel-art.md              # pixel art technique & mastery
+│   │   ├── pixel-art.md              # pixel art technique & mastery
+│   │   └── design-thinking.md        # lateral thinking, analogical reasoning,
+│   │                                 # mental models — used by analogous-sauce
 │   ├── frame-extraction.md           # when you need a real image, not a transcript
 │   │                                 # (yt-dlp segment + ffmpeg frame grab)
 │   └── youtube-transcripts.md        # full sync.py / yt-dlp reference docs

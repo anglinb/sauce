@@ -52,6 +52,7 @@ Use the existing files as templates. A topic file should contain:
 - [`apps.md`](apps.md) — building, monetizing, and growing consumer mobile apps
 - [`ugc.md`](ugc.md) — user-generated content as a marketing/growth channel
 - [`pixel-art.md`](pixel-art.md) — pixel art technique, tutorials, and old-school mastery
+- [`design-thinking.md`](design-thinking.md) — lateral thinking, analogical reasoning, mental models, and the IDEO-style design-thinking method (the meta-process layer for `skills/analogous-sauce/`)
 
 ## Naming convention
 

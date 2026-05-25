@@ -22,11 +22,18 @@ Install just the `get-sauce` skill:
 npx skills add anglinb/sauce --skill get-sauce
 ```
 
+Install just the `analogous-sauce` skill (also pulls in `get-sauce` as a dependency):
+
+```bash
+npx skills add anglinb/sauce --skill analogous-sauce
+```
+
 ## What you get
 
 | Skill | What it does |
 |---|---|
 | `get-sauce` | Discover candidate sources via grepable registry (~180 podcasts, blogs, newsletters, conferences) → download YouTube transcripts → spawn a wide-context subagent that quotes founders verbatim with file-level attribution → critic-evaluates the answer → loops with new sources if it's not good enough. Defaults: Superwall Podcast for app/monetization questions, Starter Story for general business. |
+| `analogous-sauce` | Zoom out from a stuck problem and find ideas by **analogy** — "you're thinking about app distribution, let's go look at drop-shipping / record labels / drug dealers / vending machines." Applies a battery of ideation lenses (different industry, different era, different scale, biological, black-market, childhood, adjacent profession, reverse, …), picks 2–4 generative analogies with the user, then invokes `get-sauce` against each *analogous* domain to pull real practitioner language back into the user's problem. Uses the curated `design-thinking` topic for the meta-process. |
 
 ## Prerequisites
 
