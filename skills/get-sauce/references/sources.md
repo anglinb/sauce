@@ -132,6 +132,14 @@ Aaron Levie | x.com/levie | x-account, Box, enterprise-SaaS, founders, AI, witty
 Auren Hoffman | safegraph.com/blog, x.com/auren | blog, x-account, data, B2B, hiring, scaling, SafeGraph
 Brian Norgard | x.com/BrianNorgard | x-account, consumer, growth, mobile, Tinder, distribution
 David Sacks | x.com/DavidSacks | x-account, enterprise-SaaS, PayPal-mafia, Yammer, distribution, All-In
+Nikita Bier | x.com/nikitabier, intro.co/NikitaBier | x-account, consumer, growth, virality, teen-social, TBH, Gas, X, friend-graph, contact-book, app-launch
+Sean Ellis | startup-marketing.com, x.com/seanellis | blog, book, growth, growth-hacking, PMF-survey, Hacking-Growth, high-tempo-testing, activation
+Brian Balfour | brianbalfour.com, x.com/bbalfour | blog, growth, Reforge, four-fits, retention, B2B, consumer, frameworks, HubSpot
+James Currier | nfx.com, x.com/JamesCurrier | blog, vc-publication, NFX, network-effects, virality, marketplaces, defensibility, founders
+Nir Eyal | nirandfar.com, x.com/nireyal | blog, book, behavior-design, Hooked, retention, habits, consumer, psychology, Indistractable
+Eugene Wei | eugenewei.com, x.com/eugenewei | blog, essays, consumer-social, TikTok, status-as-a-service, network-effects, deep-essays, ex-Amazon, ex-Hulu, ex-Oculus
+Casey Winters | caseyaccidental.com, x.com/onecaseman | blog, growth, marketplaces, PLG, Pinterest, Grubhub, Eventbrite, retention, SEO
+Sachin Rekhi | sachinrekhi.com, x.com/sachinrekhi | blog, PM, LinkedIn, growth, founders, careers, product-management
 
 # ──────────────────────────────────────────────────────────────────────────────
 # YouTube channels (not already listed as podcasts)
@@ -181,6 +189,9 @@ Trung Phan | trungphan.substack.com, x.com/TrungTPhan | newsletter, x-account, t
 Polina Marinova Pompliano | thepost.substack.com, x.com/polina_marinova | newsletter, founders, profiles, profiles-in-history
 Khe Hy | radreads.co, x.com/khemaridh | newsletter, knowledge-work, productivity, leaving-bigco, finance
 Visualize Value | visualizevalue.com, x.com/visualizevalue | x-account, design, mental-models, branding, Jack-Butcher
+Startup Archive | startuparchive.org, youtube.com/@startuparchive, x.com/StartupArchive_ | publication, youtube, clips, founders, talks, growth, history, index — treat as clip-index, not primary
+Sequoia Crucible Moments | sequoiacap.com/crucible-moments, youtube.com/@sequoiacapital | podcast, vc-publication, founders, origin-stories, growth, scaling, Sequoia, deep-conversations
+Stanford Blitzscaling (CS183C) | youtube.com/playlist?list=PL11qn6zM2Y3Z5NkvLhVmkTuwvgLO06-9u | youtube, course, scaling, founders, Reid-Hoffman, Stanford, Chesky, Schmidt, Mayer, Hastings, blitzscaling, archived
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Conferences (operator-grade talks, mostly published on YouTube)
