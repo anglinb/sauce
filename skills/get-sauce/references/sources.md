@@ -140,6 +140,36 @@ Nir Eyal | nirandfar.com, x.com/nireyal | blog, book, behavior-design, Hooked, r
 Eugene Wei | eugenewei.com, x.com/eugenewei | blog, essays, consumer-social, TikTok, status-as-a-service, network-effects, deep-essays, ex-Amazon, ex-Hulu, ex-Oculus
 Casey Winters | caseyaccidental.com, x.com/onecaseman | blog, growth, marketplaces, PLG, Pinterest, Grubhub, Eventbrite, retention, SEO
 Sachin Rekhi | sachinrekhi.com, x.com/sachinrekhi | blog, PM, LinkedIn, growth, founders, careers, product-management
+Aaron Ross | predictablerevenue.com, x.com/motoceo | blog, book, B2B, sales, cold-outbound, SDR, Predictable-Revenue, Cold-Calling-2.0, ex-Salesforce
+Trish Bertuzzi | bridgegroupinc.com, blog.bridgegroupinc.com, x.com/bridgegroupinc | blog, book, B2B, sales, SDR, sales-development, TOPSSD, Bridge-Group, benchmarks
+Pete Kazanjy | foundingsales.com, x.com/Kazanjy | book, community, founder-led-sales, B2B, sales, Modern-Sales-Pros, 0-to-1, free-book
+Jason Bay | outboundsquad.com, x.com/jasondbay | podcast, blog, B2B, sales, cold-outbound, cold-email, cold-call, Outbound-Squad, Blissful-Prospecting
+Josh Braun | joshbraun.com, x.com/joshbraun | blog, podcast, course, B2B, sales, cold-outbound, language-patterns, anti-pushy, Inside-Selling, Badass-B2B-Growth-Guide
+Will Allred | lavender.ai/blog, linkedin.com/in/williamallred | blog, vendor-publication, B2B, sales, cold-email, personalization, benchmarks, Lavender, COO, AI-email
+Sam Nelson | sdrleader.com, samnelson.substack.com, linkedin.com/in/realsamnelson | blog, newsletter, B2B, sales, SDR, sequencing, triple-tap, ex-Outreach
+Kyle Coleman | copy.ai/author/kyle-coleman, linkedin.com/in/kyletcoleman | blog, B2B, sales, GTM-AI, ex-Clari, Copy.ai, CMO, LinkedIn-Top-Voice
+Belal Batrawy | learntosell.io, linkedin.com/in/belbatrawy | blog, course, B2B, sales, cold-call, Mic-Drop-Method, Death-to-Fluff, LinkedIn-sales
+Jordan Crawford | blueprintgtm.com, edge.blueprintgtm.com | newsletter, B2B, sales, cold-outbound, signal-based, AI-outbound, intent-data, Permissionless-Value-Prop
+Justin Welsh | justinwelsh.me, learn.justinwelsh.me, x.com/thejustinwelsh | newsletter, course, solopreneur, LinkedIn, content, distribution, LinkedIn-Operating-System, Saturday-Solopreneur
+Daniel Priestley | danielpriestley.com, x.com/DanielPriestley | book, blog, B2B, high-ticket, Key-Person-of-Influence, ScoreApp, Dent-Global, 5-Ps
+Alex Hormozi | acquisition.com, youtube.com/@AlexHormozi, x.com/AlexHormozi | book, youtube, podcast, leads, sales, cold-outreach, high-ticket, Core-4, $100M-Leads, The-Game
+Adam Robinson (RB2B) | newsletter.rb2b.com, retention.com, linkedin.com/in/retentionadam | newsletter, B2B, cold-email, deliverability, sender-reputation, founder-led, RB2B, Retention.com
+Apollo.io | apollo.io/blog, apollo.io/academy | vendor-publication, B2B, sales, cold-email, prospecting, benchmarks, reply-rates, data-enrichment
+Lavender | lavender.ai/blog | vendor-publication, B2B, sales, cold-email, AI-email, personalization, benchmarks, William-Allred, reply-rates
+Smartlead.ai | smartlead.ai/blog | vendor-publication, B2B, cold-email, deliverability, mailbox-rotation, warmup, infrastructure, Vaibhav-Namburi
+Instantly.ai | instantly.ai/blog | vendor-publication, B2B, cold-email, deliverability, agency, warmup, AI-reply
+Quickmail | quickmail.com, quickmail.com/blog | vendor-publication, B2B, cold-email, deliverability, infrastructure
+Outreach | outreach.ai/resources/blog | vendor-publication, B2B, sales, sales-engagement, cadence, sequence, SDR, enterprise
+Salesloft | salesloft.com/resources/blog | vendor-publication, B2B, sales, sales-engagement, cadence, Rhythm, Conductor-AI, signal-based
+Clay | clay.com/blog-category/outbound-plays | vendor-publication, B2B, cold-email, AI-personalization, data-enrichment, outbound-plays, GTM
+Common Room | commonroom.io | vendor-publication, B2B, signal-based, intent-data, community, pipeline, Leslie-Venetz
+Warmly | warmly.ai | vendor-publication, B2B, signal-based, website-deanonymization, intent, ABM
+Botdog | botdog.co, botdog.co/blog-posts | vendor-publication, B2B, LinkedIn, outreach-automation, connection-requests, sequencing, primary-data
+HeyReach | heyreach.io, heyreach.io/blog | vendor-publication, B2B, LinkedIn, outreach-automation, agency, multi-account
+PhantomBuster | phantombuster.com, phantombuster.com/blog | vendor-publication, B2B, LinkedIn, automation, scraping, primer
+GTMnow (Sales Hacker) | gtmnow.com | publication, podcast, B2B, sales, GTM, GTMfund, Max-Altschuler, Hacking-Sales, formerly-Sales-Hacker
+Pavilion | joinpavilion.com, x.com/joinpavilion | community, B2B, sales, leaders, Sam-Jacobs, CMO, GTM, paid-community
+Growth Unhinged (Kyle Poyar) | growthunhinged.com, x.com/poyark | newsletter, B2B, PLG, GTM, OpenView, outbound, AI-GTM
 
 # ──────────────────────────────────────────────────────────────────────────────
 # YouTube channels (not already listed as podcasts)

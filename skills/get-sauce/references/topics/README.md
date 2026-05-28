@@ -52,6 +52,7 @@ Use the existing files as templates. A topic file should contain:
 - [`apps.md`](apps.md) — building, monetizing, and growing consumer mobile apps
 - [`ugc.md`](ugc.md) — user-generated content as a marketing/growth channel
 - [`virality.md`](virality.md) — virality, k-factor, viral loops, network effects, and the "magic number" retention-threshold canon (Facebook 7/10, Slack 2k, Dropbox 500MB, Twitter 30 follows). Operators: Nikita Bier, Hunter Isaacson (NGL), Andrew Chen, Reid Hoffman, James Currier, Sean Ellis, Brian Balfour, Nir Eyal, Eugene Wei.
+- [`cold-outbound.md`](cold-outbound.md) — cold email + LinkedIn DM outreach for B2B. Three schools: classic SDR canon (Aaron Ross / Trish Bertuzzi / Pete Kazanjy), modern operator-by-example (Josh Braun / Jason Bay / Will Allred-Lavender / Belal Batrawy), and infra + AI-augmented (Smartlead, Apollo, Clay, Botdog, Jordan Crawford, RB2B). Plus Justin Welsh / Daniel Priestley / Hormozi for the founder-led / LinkedIn-as-distribution side.
 - [`pixel-art.md`](pixel-art.md) — pixel art technique, tutorials, and old-school mastery
 - [`design-thinking.md`](design-thinking.md) — lateral thinking, analogical reasoning, mental models, and the IDEO-style design-thinking method (the meta-process layer for `skills/analogous-sauce/`)
 
