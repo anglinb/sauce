@@ -170,6 +170,33 @@ PhantomBuster | phantombuster.com, phantombuster.com/blog | vendor-publication, 
 GTMnow (Sales Hacker) | gtmnow.com | publication, podcast, B2B, sales, GTM, GTMfund, Max-Altschuler, Hacking-Sales, formerly-Sales-Hacker
 Pavilion | joinpavilion.com, x.com/joinpavilion | community, B2B, sales, leaders, Sam-Jacobs, CMO, GTM, paid-community
 Growth Unhinged (Kyle Poyar) | growthunhinged.com, x.com/poyark | newsletter, B2B, PLG, GTM, OpenView, outbound, AI-GTM
+Karri Saarinen | karrisaarinen.com, x.com/karrisaarinen | blog, x-account, design, product-craft, taste, Linear, founder, ex-Airbnb
+Tuomas Artman | x.com/artman | x-account, eng, CTO, Linear, sync-engine, local-first, product-craft
+Dylan Field | x.com/zoink | x-account, design, founder, Figma, multiplayer, design-tools, product
+Yuhki Yamashita | x.com/yuhkiyam | x-account, PM, CPO, Figma, product-craft, storytelling, design-tools
+Sho Kuwamoto | x.com/skuwamoto | x-account, PM, design, Figma, product-craft, customer-obsession, big-vs-little-features
+Ivan Zhao | x.com/ivanhzhao | x-account, founder, Notion, product-craft, philosophy, McLuhan, tool-shaping, horizontal
+Akshay Kothari | x.com/akothari | x-account, COO, Notion, operations, scaling, ex-LinkedIn, Pulse
+Guillermo Rauch | rauchg.com, x.com/rauchg | blog, x-account, founder, Vercel, Next.js, v0, preview-deployments, web-platform, AI-coding
+Marty Cagan | svpg.com, x.com/cagan | blog, book, SVPG, product-management, product-trio, Inspired, Empowered, Transformed, frameworks
+Teresa Torres | producttalk.org, x.com/ttorres | blog, book, PM, continuous-discovery, opportunity-solution-tree, customer-interviews, Product-Talk
+John Cutler | cutlefish.substack.com, x.com/johncutlefish | newsletter, x-account, PM, product-systems, org-design, Beautiful-Mess, ex-Amplitude, Dotwork
+Shreyas Doshi | shreyasdoshi.substack.com, x.com/shreyasdoshi | newsletter, x-account, PM, product-principles, frameworks, LNO, ex-Stripe, ex-Twitter, ex-Yahoo
+Julie Zhuo | juliezhuo.com, medium.com/the-year-of-the-looking-glass, x.com/joulee | blog, book, design, management, ex-Facebook, Year-of-the-Looking-Glass, Making-of-a-Manager
+Kunal Shah | kunalshahtalks.com, x.com/kunalb11 | x-account, founder, CRED, product-principles, Delta-4, India, second-order-thinking
+Tobi Lütke | x.com/tobi, theobservereffect.org/tobi.html | x-account, founder, Shopify, eng-led, product-craft, low-process, trust-battery, calm-progress
+Ken Kocienda | creativeselection.io, x.com/kocienda | book, x-account, ex-Apple, iPhone, Creative-Selection, demo-driven, Steve-Jobs
+Ryan Singer | ryansinger.co, basecamp.com/shapeup, x.com/rjs | book, blog, Shape-Up, Basecamp, product-process, six-week-cycles, betting-table
+Colin Bryar & Bill Carr — Working Backwards | workingbackwards.com | book, Amazon, PR-FAQ, six-pagers, ex-Bezos, product-process, Working-Backwards
+Linear (publication) | linear.app/method, linear.app/blog | publication, product-craft, Linear-Method, opinionated-software, cycles, taste
+GitLab Handbook | handbook.gitlab.com, handbook.gitlab.com/handbook/product-development | publication, handbook, transparent, product-development, eng-culture, remote
+Stripe Documentation | docs.stripe.com, docs.stripe.com/release-phases | documentation, Stripe, API, release-phases, private-preview, public-preview, GA, payments
+Stripe Engineering Blog | stripe.com/blog/engineering, stripe.dev/blog | blog, Stripe, eng, infrastructure, product-craft, API-design
+Increment Magazine | increment.com | publication, archived, Stripe, eng, dev, product-craft, taste, 2017-2021
+Cheeky Pint (John Collison) | cheekypint.transistor.fm | podcast, founders, deep-conversations, John-Collison, Stripe, interviews, craft
+SVPG | svpg.com | publication, blog, product-management, Marty-Cagan, product-trio, Inspired, Empowered, Transformed
+Anthropic Blog | anthropic.com/news, anthropic.com/research | publication, AI, Claude, research-preview, RSP, safety, staged-release
+OpenAI Blog | openai.com/blog, openai.com/index | publication, AI, GPT, ChatGPT, research-preview, product-launches, iterative-deployment
 
 # ──────────────────────────────────────────────────────────────────────────────
 # YouTube channels (not already listed as podcasts)
